@@ -1,9 +1,9 @@
 # AI_In_HealthCare-DesignEngineering_Project
 
-It was one of our Project given by University under subject called "Design Enginnering".
-In this subject we were supposed to deliver some kind of web service & smartphone app. We were already working on Machine Learning basics and came with an idea to prepare and host those models on api and access them through Android client app.
+It was one of the Project given by University under the subject called "Design Enginnering".
+In this subject we were supposed to develop some kind of web service & smartphone app. We were already working on Machine Learning basics and came with an idea to prepare those models and host them on api and access them through Android client app.
 
-In this project we deal with,
+In this project we dealt with,
 
   1) Heart Disease prediction
   2) Breast Cancer Detection
@@ -25,9 +25,9 @@ ii) Android Client Application
      
 iii) Datasets
     
-     Both datasets from UCI Repository
+     Both datasets from UCI Repository.
      
 iv) Models
     
      Built with Sci-kit Learn, Keras, Pandas, Numpy.
-     Model persistance: Joblib
+     Model persistance: Joblib.
