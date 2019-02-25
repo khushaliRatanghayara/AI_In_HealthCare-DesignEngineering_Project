@@ -18,15 +18,19 @@ app = Flask(__name__)
 api = Api(app)
 graph = tf.get_default_graph()
 
+# Default url
 @app.route('/')
 def hello_world():
     return jsonify(message = 'Invalid URL.')
 
+
+# Incomplete url
 @app.route('/heart/')
 @app.route('/cancer/')
 def heart():
     return jsonify(message = 'Invalid URL.')
 
+# URL for prediction, if params not provided
 @app.route('/heart/predict/')
 @app.route('/cancer/predict/')
 def heart_predict():
@@ -155,15 +159,17 @@ class BreastCancerAPI(Resource):
                     {'svm':svm_res},
                 ])
 
+                # Final results
                 return jsonify(Result = svm_res,Predictions = predictions, Accuracy = accuracy)
 
         #If anything goes wrong.
         except Exception as e:
             return jsonify(error = 'Sorry, some exception has occurred.', for_dev = str(e))
 
-        return jsonify(msg = 'breast cancer API', params = params)
+        #return jsonify(msg = 'breast cancer API', params = params)
 
 
+# Mapping of intended url with class resource
 api.add_resource(HeartAPI,'/heart/predict/<string:params>')
 api.add_resource(BreastCancerAPI,'/cancer/predict/<string:params>')
 
