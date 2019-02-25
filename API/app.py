@@ -55,7 +55,7 @@ bc_svm = load('static/Bc_svm.joblib')
 class HeartAPI(Resource):
     
     def get(self,params):
-        
+        #models
         global ann,knn,dtree,lr,nb,svm,graph
 
         try:
@@ -63,6 +63,7 @@ class HeartAPI(Resource):
             params = params.split('-')
             params = [float(f) for f in params]
 
+            #checking for params
             if len(params)!=13:
                 raise Exception('You need to enter 13 params')
 
@@ -125,6 +126,7 @@ class BreastCancerAPI(Resource):
             params = params.split('-')
             params = [float(f) for f in params]
             
+            #checking for params
             if len(params)!=10:
                 raise Exception('You need to enter 13 params')
 
